@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+</head>
+<body>
+  
+<div>
+  <h1 id="title">Register</h1>
+  <p id="subtitle">Complete Your Information</p>
+  <br>
+</div>
+
+<form>
+  <fieldset>
+    <div>
+      <label for="firstname">First Name:</label>
+      <input type="text" id="firstname" name="firstname" placeholder="First Name">
+      <label for="lastname">Last Name:</label>
+      <input type="text" id="lastname" name="lastname" placeholder="Last Name">
+    </div>
+  </fieldset>
+
+  <div>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" placeholder="Email">
+
+  </div>
+  <div>
+    <label> What are You looking for ?</label>
+    <label>
+      <input type="radio" name="looking" value="friend" checked>
+      Friend
+    </label>
+    <label>
+      <input type="radio" name="looking" value="Relationship">
+      Relationship
+  </div>
+  <div>
+    <label> Gender </label>
+    <select id="gender">
+      <option selected disable value="">Select</option>
+      <option>Male</option>
+      <option>Female</option>
+      <option>LGBTQIA+</option>
+    </select>
+  </div>
+
+  <fieldset>
+    <div>
+      <label> How do you describe yourself?</label>
+      <input type="checkbox" id="dreamer" name="option1" value="Dreamer">
+      <label for="dreamer">Dreamer</label>
+      <input type="checkbox" id="artist" name="option2" value="Artist">
+      <label for="artist">Artist</label>
+      <input type="checkbox" id="writer" name="option3" value="Writer">
+      <label for="writer">Writer</label>
+      <input type="checkbox" id="reader" name="option4" value="Reader">
+      <label for="reader">Reader</label>
+      <input type="checkbox" id="sport" name="option5" value="Sport">
+      <label for="sport">Sport</label>
+      <input type="checkbox" id="gamer" name="option6" value="Gamer">
+      <label for="gamer">Gamer</label>
+
+    </div>
+  </fieldset>
+
+  <div>
+    <br>
+    <label>Tell about yourself</label>
+    <textarea id="about" name="about" rows="10" cols="50" placeholder="Tell about yourself"></textarea>
+  </div>
+
+  <button type="submit">Submit</button>
+</form>
+
+</body>
+</html>
