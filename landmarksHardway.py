@@ -17,8 +17,15 @@ def lessThanFifteenMinutes(landmark):
     return landmarks[landmark] < 15
 
 def quickList(landmarks):
-    return (filter(lessThanFifteenMinutes, landmarks))
+    newList = []
+    for element in landmarks:
+        if lessThanFifteenMinutes(element):
+            newList.append(element)
+    return newList
 
 newList = quickList(landmarks)
 print (newList)
 print (len(newList))
+
+
+
