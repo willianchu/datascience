@@ -59,4 +59,22 @@ print(points.max())
 
 print(points.min())
 
+print(games_played.max())
+print(attendance.mean())
+print(wins.median() - losses.median())
+print(wins.min())
+print(points.max() - points.min())
+
+series.max()    #outputs maximum value in Pandas Series
+series.min()    #outputs minimum value in Pandas Series
+series.mean()   #outputs average value in Pandas Series
+series.median() #outputs median value in Pandas Series
+series.mode()   #outputs mode value in Pandas Series
+
+df.mode() # will output the dataframe without the NaN values and index
+df.mode(dropna=False) # will output the dataframe with the NaN values 
+df.mode(numeric_only=True) # will output the dataframe with numeric values only including the NaN values
+df.mode(axis='columns', numeric_only=True) #  will output the dataframe with numeric values only including the NaN valueswith the index
+
+
 
