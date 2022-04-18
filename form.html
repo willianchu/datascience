@@ -5,32 +5,35 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Register</title>
+  <link rel="stylesheet" type="text/css" href="form.css" media="screen" />
 </head>
 <body>
-  
+<!-- header of the page -->
 <div>
   <h1 id="title">Register</h1>
   <p id="subtitle">Complete Your Information</p>
   <br>
 </div>
-
+<!-- Form Begins Here -->
 <form>
-  <fieldset>
-    <div>
-      <label for="firstname">First Name:</label>
-      <input type="text" id="firstname" name="firstname" placeholder="First Name">
-      <label for="lastname">Last Name:</label>
+  <fieldset class="group">
+    <div class="field">
+      <label for="firstname"><strong>First Name:</strong></label>
+      <input type="text" id="firstname" name="firstname" placeholder="First Name" required>
+    </div>
+    <div class="field">
+      <label for="lastname"><strong>Last Name:</strong></label>
       <input type="text" id="lastname" name="lastname" placeholder="Last Name">
     </div>
   </fieldset>
-
-  <div>
-    <label for="email">Email:</label>
+<!-- email field -->
+  <div class="field">
+    <label for="email"><strong>Email:</strong></label>
     <input type="email" id="email" name="email" placeholder="Email">
-
+<!-- field with radio buttons -->
   </div>
-  <div>
-    <label> What are You looking for ?</label>
+  <div class="field">
+    <label><strong> What are You looking for ?</strong></label>
     <label>
       <input type="radio" name="looking" value="friend" checked>
       Friend
@@ -39,8 +42,9 @@
       <input type="radio" name="looking" value="Relationship">
       Relationship
   </div>
-  <div>
-    <label> Gender </label>
+  <!-- field with checkboxes -->
+  <div class="field">
+    <label for="gender"><strong>Gender</strong></label>
     <select id="gender">
       <option selected disable value="">Select</option>
       <option>Male</option>
@@ -49,9 +53,10 @@
     </select>
   </div>
 
-  <fieldset>
-    <div>
-      <label> How do you describe yourself?</label>
+  <fieldset class="group">
+    <!-- field with checkboxes -->
+    <div class="check">
+      <label><strong>How do you describe yourself?</strong></label>
       <input type="checkbox" id="dreamer" name="option1" value="Dreamer">
       <label for="dreamer">Dreamer</label>
       <input type="checkbox" id="artist" name="option2" value="Artist">
@@ -67,14 +72,14 @@
 
     </div>
   </fieldset>
-
-  <div>
+  <!-- text box -->
+  <div class="field">
     <br>
-    <label>Tell about yourself</label>
+    <label><strong>Tell about yourself</strong></label>
     <textarea id="about" name="about" rows="10" cols="50" placeholder="Tell about yourself"></textarea>
   </div>
 
-  <button type="submit">Submit</button>
+  <button class="button" type="submit">Submit</button>
 </form>
 
 </body>
