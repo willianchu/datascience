@@ -39,5 +39,5 @@ df.groupby(['neighborhood']).mean()['size_in_sqft']
 # challenge21
 df.groupby(['neighborhood']).mean()['price'].sort_values(ascending=False).head(1)
 
-df.groupby(['neighborhood']).mean()['size_in_sqft'].sort_values(ascending=False).head(1)
+df.groupby(['neighborhood']).max()['size_in_sqft'].sort_values(ascending=False).head(1)
 
