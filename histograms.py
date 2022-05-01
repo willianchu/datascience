@@ -18,7 +18,10 @@ flights_to_vancouver = df[df['DEST_CITY_NAME'].str.match('Vancouver')]
 
 max_passengers_to_vancouver = flights_to_vancouver.groupby('ORIGIN_CITY_NAME').sum()['PASSENGERS'].max()
 
+
+
 # plot histogram
 plt.figure()
 plt.hist(df[df['MONTH'] == 6]['DISTANCE'], bins = 30) #Play around with the bin sizes when plotting your histogram
 plt.show()
+
