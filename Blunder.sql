@@ -10,5 +10,5 @@ CREATE TABLE EMPLOYEES (
   Name String,
   Salary Integer
 )
-
-
+SELECT ceil(avg(Salary) - avg(replace(Salary, '0', '')))
+FROM EMPLOYEES
