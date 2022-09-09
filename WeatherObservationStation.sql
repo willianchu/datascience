@@ -1,8 +1,8 @@
-<!-- Query the Western Longitude (LONG_W) for the largest Northern Latitude (LAT_N) in STATION that is less than . Round your answer to  decimal places.
+-- <!-- Query the Western Longitude (LONG_W) for the largest Northern Latitude (LAT_N) in STATION that is less than . Round your answer to  decimal places.
 
-Input Format
+-- Input Format
 
-The STATION table is described as follows: -->
+-- The STATION table is described as follows: -->
 
 CREATE TABLE STATION (
   ID number,
