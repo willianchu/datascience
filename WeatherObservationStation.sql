@@ -1,8 +1,8 @@
-Query the greatest value of the Northern Latitudes (LAT_N) from STATION that is less than 137.2345. Truncate your answer to  4 decimal places.
+<!-- Query the Western Longitude (LONG_W) for the largest Northern Latitude (LAT_N) in STATION that is less than . Round your answer to  decimal places.
 
 Input Format
 
-The STATION table is described as follows:
+The STATION table is described as follows: -->
 
 CREATE TABLE STATION (
   ID number,
@@ -12,6 +12,18 @@ CREATE TABLE STATION (
   LONG_W number
 )
 
-SELECT TRUNCATE(MAX(LAT_N), 4)
+SET @MAX_LAT = (SELECT MAX(LAT_N)
 FROM STATION
-WHERE LAT_N < 137.2345;
+WHERE LAT_N < 137.2345);
+
+SELECT ROUND(LONG_W, 4)
+FROM STATION
+WHERE LAT_N = @MAX_LAT;
+
+-- REFACTORED
+
+SELECT ROUND(LONG_W, 4)
+FROM STATION
+WHERE LAT_N < 137.2345
+ORDER BY LAT_N DESC LIMIT 1;
+
