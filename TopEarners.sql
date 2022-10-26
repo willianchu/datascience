@@ -7,7 +7,7 @@ CREATE TABLE Employee (
 
 SELECT salary * months AS earnings, count(*) AS num_employees
 FROM Employee
-WHERE earnings = (SELECT MAX(salary * months) FROM Employee)
+WHERE salary * months = (SELECT MAX(salary * months) FROM Employee)
 GROUP BY earnings
 ORDER BY earnings DESC;
 
