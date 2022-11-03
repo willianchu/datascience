@@ -12,8 +12,8 @@ CREATE TABLE BST (
 -- Inner: If node is neither root nor leaf node.
 
 SELECT 
-  N,
-    CASE WHEN N = Null THEN 'Root'
+  N, P
+    CASE WHEN N IS NULL THEN 'Root'
          WHEN N IN (SELECT P FROM BST) THEN 'Inner'
          ELSE 'Leaf'
     END AS Node_Type
