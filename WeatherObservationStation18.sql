@@ -17,15 +17,6 @@ CREATE TABLE STATION (
   LONG_W number
 )
 
--- distance by pitagoras
-SELECT 
-    ROUND (
-        SQRT(
-          POWER( (MAX(LAT_N) - MIN(LAT_N)), 2) + 
-          POWER( (MAX(LONG_W) - MIN(LONG_W)), 2)
-          ) 
-        , 4)
-FROM STATION;
 
 -- Manhattan distance
 select round((max(lat_n) - min(lat_n)) + (max(long_w) - min(long_w)),4) 
