@@ -15,13 +15,15 @@ SELECT
   Grade,
   Marks
 FROM
-(SELECT 
-  Name, 
-  (SELECT Grade FROM Grades WHERE s.Marks >= Min_Mark AND s.Marks <= Max_Mark) AS Grade,
-  Marks
-FROM
-  Students s
-ORDER BY
-  Grade DESC,
-  Name ASC) AS Classifications;
+  (
+    SELECT 
+      Name, 
+      (SELECT Grade FROM Grades WHERE s.Marks >= Min_Mark AND s.Marks <= Max_Mark) AS Grade,
+      Marks
+    FROM
+      Students s
+    ORDER BY
+      Grade DESC,
+      Name ASC
+  ) AS StudentsGrades;
 
