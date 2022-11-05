@@ -11,6 +11,10 @@ CREATE TABLE Submissions(
 );
 
 SELECT 
+    hacker_id, name,
+    total_score
+FROM
+(SELECT 
     h.hacker_id, name,
     SUM(score) AS total_score
 FROM
@@ -20,4 +24,7 @@ FROM
 GROUP BY
     hacker_id, name
 ORDER BY
-    total_score DESC, hacker_id ASC;
+    total_score DESC, hacker_id ASC) AS t
+WHERE
+    total_score <> 0;
+
