@@ -11,12 +11,17 @@ CREATE TABLE Grades (ID INTEGER, Min_Mark INTEGER, Max_Mark INTEGER);
 -- If there is more than one student with the same grade (1-7) assigned to them, order those particular students by their marks in ascending order.
 
 SELECT 
-  IF Grade > 7 THEN Name ELSE NULL END AS Name, 
+  IF (Grade < 8, NULL, Name) AS Name,
+  Grade,
+  Marks
+FROM
+(SELECT 
+  Name, 
   (SELECT Grade FROM Grades WHERE s.Marks >= Min_Mark AND s.Marks <= Max_Mark) AS Grade,
   Marks
 FROM
   Students s
 ORDER BY
   Grade DESC,
-  Name ASC;
+  Name ASC) AS Classifications;
 
