@@ -4,5 +4,11 @@ CREATE TABLE STATION (
     STATE VARCHAR(2) NOT NULL,
     LAT_N DECIMAL(9,6) NOT NULL,
     LONG_W DECIMAL(9,6) NOT NULL,
-);'
+);
 
+-- round median of (lat_N) to 4 decimal places
+
+SELECT
+    ROUND(AVG(LAT_N), 4)
+FROM
+    STATION;
