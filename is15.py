@@ -6,6 +6,7 @@ def transform(a = 2):
 total = 1
 
 for x in [3,5,1]:
-    total = total + transform(x)
+    # total = total + transform(x)
+    print(x,transform(x))
 
 print(total)
