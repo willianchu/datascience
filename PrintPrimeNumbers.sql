@@ -8,8 +8,9 @@ WITH RECURSIVE cte (Number) AS (
     WHERE Number < 100
 )
 
-SELECT Number
+SELECT concat("&",Number) 
 FROM cte
+where ((Number * Number ) / (Number - 1)) <> 0
 ORDER BY Number;
 
 
