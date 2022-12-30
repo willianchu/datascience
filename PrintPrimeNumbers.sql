@@ -7,7 +7,7 @@ FROM (
     information_schema.tables t2,
     (SELECT @num:=1) tmp
 ) tempNum
-WHERE NUMB<=100 AND NOT EXISTS(
+WHERE NUMB<=1000 AND NOT EXISTS(
 		SELECT * FROM (
 			SELECT @nu:=@nu+1 as NUMA FROM
 			    information_schema.tables t1,
@@ -17,3 +17,6 @@ WHERE NUMB<=100 AND NOT EXISTS(
 			) tatata
 		WHERE FLOOR(NUMB/NUMA)=(NUMB/NUMA) AND NUMA<NUMB AND NUMA>1
 	)
+
+
+-- 2 loops to find prime numbers. The first loop is to count from 2 to 1000. The second loop is to check if the number is prime. If it is, then it will be printed. If not, then it will be ignored. The first loop is to count from 2 to 1000. The second loop is to check if the number is prime. If it is, then it will be printed. If not, then it will be ignored.
