@@ -13,17 +13,19 @@ CREATE TABLE IF NOT EXISTS OCCUPATIONS(
 -- Occupation will only contain one of the following values: Doctor, Professor, Singer or Actor.
 -- order by values Doctor, Professor, Singer, Actor
 
-SELECT *
-FROM (  SELECT NAME, OCCUPATION
-        FROM OCCUPATIONS
-        WHERE OCCUPATION = 'Doctor' OR OCCUPATION = 'Professor' OR OCCUPATION = 'Singer'
-        ORDER BY OCCUPATION) AS FIRST_THREE
+
+      SELECT NAME, OCCUPATION
+              FROM OCCUPATIONS
+              WHERE OCCUPATION = 'Doctor' OR OCCUPATION = 'Professor' OR OCCUPATION = 'Singer'
+              ORDER BY OCCUPATION, NAME ASC
+
 UNION
-SELECT *
-FROM (SELECT NAME, OCCUPATION
-FROM OCCUPATIONS
-WHERE OCCUPATION = 'Actor'
-ORDER BY OCCUPATION, NAME) AS LAST_ONE;
+
+      SELECT NAME, OCCUPATION
+      FROM OCCUPATIONS
+      WHERE OCCUPATION = 'Actor'
+      ORDER BY OCCUPATION, NAME;
+
 
 
 
