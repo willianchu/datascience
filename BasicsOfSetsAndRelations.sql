@@ -47,3 +47,28 @@ FROM
 
 -- π(Name, Number)(Student) hence this will return all data in name and number columns.
 
+-- Erase all data in Student table
+DELETE * FROM Student;
+INSERT INTO Student VALUES('Nina',3412,'F')
+INSERT INTO Student VALUES('Mike',1234,'M')
+INSERT INTO Student VALUES('Nelson',2341,'F')
+
+CREATE TABLE Teaching_Assitants
+(
+    Subject varchar(50),
+    ID int,
+)
+INSERT INTO Teaching_Assitants VALUES('Physics',3412)
+INSERT INTO Teaching_Assitants VALUES('Chemistry',1111)
+INSERT INTO Teaching_Assitants VALUES('Mathematics',2341)
+
+-- What is the count of rows returned in the following join operation?
+-- Student ⊳⊲(Number=ID) Teaching Assistants
+
+SELECT COUNT(*)
+FROM Student
+INNER JOIN Teaching_Assitants
+ON Student.NumberID = Teaching_Assitants.ID;
+
+-- // answer: 2
+
