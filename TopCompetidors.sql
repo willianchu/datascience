@@ -74,7 +74,14 @@ INSERT INTO Submissions (
   97431,90411,71055,30,
 )
 
-
-
-
-SELECT hacker_id, name, SUM(score) AS total_score
+SELECT hacker_id, name
+FROM Hackers
+WHERE hacker_id IN (
+  SELECT hacker_id
+  FROM Submissions
+  WHERE score = (
+    SELECT MAX(score)
+    FROM Submissions
+    WHERE hacker_id = Submissions.hacker_id
+  )
+)
